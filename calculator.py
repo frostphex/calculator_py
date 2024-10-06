@@ -65,16 +65,27 @@ class Calculator:
     print("5. Exit")
     
   def exit(self):
+    """Returns boolean if the user wants to exit the calculator. True if they want to exit the calculator."""
     confirm_exit = input("Do you really want to exit calculator? (yes/no): ")
     return confirm_exit[0].lower() == 'y'
+
+def get_number(prompt):
+  """Helper function to get a valid number from the user."""
+  while True:
+    try:
+      return float(input(prompt))
+    except ValueError:
+      print("Error: Enter a valid number.")
 
 if __name__ == "__main__":
   print(f"{'*' * 20} Calculator Project {'*' * 20}")
   print("Please enter two numbers:")
-  num1 = float(input("First number: "))
-  num2 = float(input("Second number: "))
+  
+  num1 = get_number("First number: ")
+  num2 = get_number("Second number: ")
+  
   calculator = Calculator(num1, num2)
-
+  
   while True:
     calculator.display_options()
 
