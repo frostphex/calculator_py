@@ -1,1 +1,1 @@
-# calculator_py
+# CLI Calculator using Python
