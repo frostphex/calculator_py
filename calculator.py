@@ -45,11 +45,15 @@ class Calculator:
     
   def ask_choice(self):
     """Asks user a operation choice, returns -1 if invalid."""
-    choice = int(input("> "))
-    if choice not in [1, 2, 3, 4, 5]:
-      print("Invalid choice. Please select a valid option.")
+    try:
+      choice = int(input("> "))
+      if choice not in [1, 2, 3, 4, 5]:
+        print("Invalid choice. Please select a valid option.")
+        return -1
+      return choice
+    except ValueError:
+      print("Error: Invalid input. Please enter a number.")
       return -1
-    return choice
     
   def display_options(self):
     """Display calculator options to the user"""
@@ -62,28 +66,24 @@ class Calculator:
     
   def exit(self):
     confirm_exit = input("Do you really want to exit calculator? (yes/no): ")
-    return confirm_exit[0].lower()
+    return confirm_exit[0].lower() == 'y'
 
-print(f"{'*' * 20} Calculator Project {'*' * 20}")
-print("Please enter two numbers:")
-num1 = float(input("First number: "))
-num2 = float(input("Second number: "))
-calculator = Calculator(num1, num2)
+if __name__ == "__main__":
+  print(f"{'*' * 20} Calculator Project {'*' * 20}")
+  print("Please enter two numbers:")
+  num1 = float(input("First number: "))
+  num2 = float(input("Second number: "))
+  calculator = Calculator(num1, num2)
 
-while True:
-  calculator.display_options()
+  while True:
+    calculator.display_options()
 
-  try:
     choice = calculator.ask_choice()
-    if not choice:
-      print("Invalid choice. Please select a valid option.")
+    if choice == -1:
       continue
-  except ValueError:
-    print("Error: Invalid input. Please enter a number.")
-    continue
-  else:
+    
     result = calculator.calculate(choice) 
-    if result == 'y':
+    if result == True:
       print("Exiting calculator. Have a great day!")
       break
     elif result is not None:
