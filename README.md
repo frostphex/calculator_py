@@ -15,7 +15,7 @@ A simple calculator program built with Python that performs basic mathematical o
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/froxphex/calculator_py.git
+   git clone https://github.com/frostphex/calculator_py.git
    cd calculator_py
 
 2. Make sure you have Python 3 installed. If not, you can download it from here.
