@@ -4,8 +4,8 @@ from calculator import Calculator
 
 def main():
     print(f"{'*' * 20} Calculator Project {'*' * 20}")
-    print("Please enter two numbers:")
 
+    # Prompt the user to enter two numbers
     num1 = ui.get_number("First number: ")
     num2 = ui.get_number("Second number: ")
 
@@ -16,15 +16,28 @@ def main():
         ui.display_options()
 
         choice = ui.ask_choice()
-        if not choice:
+        if choice is None:
+            continue  # Return to menu if the choice is invalid
+
+        if choice == 5:
+            # Confirm before exiting
+            if ui.confirm_exit():
+                print("Exiting calculator. Have a great day!")
+                is_active = False
             continue
 
+        if choice == 6:
+            # Enter new numbers
+            num1 = ui.get_number("First number: ")
+            num2 = ui.get_number("Second number: ")
+            calculator = Calculator(num1, num2)
+            continue
+
+        # Perform the calculation based on the choice
         result = calculator.calculate(choice)
-        if result == True and type(result) == bool:
-            print("Exiting calculator. Have a great day!")
-            is_active = False
-        elif result is not None:
+        if result is not None:
             print(f"\nResult: {result}")
 
 
-main()
+if __name__ == "__main__":
+    main()
