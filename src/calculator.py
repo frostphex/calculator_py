@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # calculator.py - A calculator program to perform basic operations on numbers.
 
-import user_interface as ui
-
 
 class Calculator:
     """A class to perform basic mathematical operations."""
@@ -47,7 +45,5 @@ class Calculator:
                 result = self.divide()
             case 4:
                 result = self.multiply()
-            case 5:
-                result = ui.confirm_exit()
 
         return result
