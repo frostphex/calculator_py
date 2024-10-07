@@ -1,27 +1,27 @@
-# /usr/bin/env python3
+#!/usr/bin/env python3
 # calculator.py - A calculator program to perform basic operations on numbers.
 
 import user_interface as ui
 
 
 class Calculator:
-    """A class to perform basic calculations operations."""
+    """A class to perform basic mathematical operations."""
 
     def __init__(self, num1, num2):
-        """Initialize the numbers for operations."""
+        """Initialize the two numbers for operations."""
         self.num1 = num1
         self.num2 = num2
 
     def add(self):
-        """Returns addition of two numbers."""
+        """Returns the sum of two numbers."""
         return self.num1 + self.num2
 
     def subtract(self):
-        """Returns difference of two numbers."""
+        """Returns the difference between two numbers."""
         return self.num1 - self.num2
 
     def divide(self):
-        """Returns division of two numbers."""
+        """Returns the division of two numbers. Handles division by zero."""
         try:
             result = self.num1 / self.num2
         except ZeroDivisionError:
@@ -30,13 +30,14 @@ class Calculator:
         return result
 
     def multiply(self):
-        """Returns product of two numbers."""
+        """Returns the product of two numbers."""
         return self.num1 * self.num2
 
     def calculate(self, choice):
-        """Calculates the result of two numbers."""
+        """Calculates the result based on the user's choice."""
         result = None
 
+        # Match user choice to the appropriate operation
         match choice:
             case 1:
                 result = self.add()
