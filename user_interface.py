@@ -1,9 +1,9 @@
 def ask_choice():
-    """Returns None if an invalid choice is made by the user.."""
+    """Returns user's choice if valid, otherwise None."""
     try:
         choice = int(input("> "))
-        if choice not in [1, 2, 3, 4, 5]:
-            print("Invalid choice. Please select a valid option.")
+        if choice not in range(1, 6):  # Valid options: 1, 2, 3, 4, 5
+            print("Invalid choice. Please select a valid option (1-5).")
             return None
         return choice
     except ValueError:
@@ -12,17 +12,23 @@ def ask_choice():
 
 
 def display_options():
-    """Display calculator options to the user"""
+    """Display calculator options to the user."""
     OPTIONS = ("Addition", "Subtraction", "Division", "Multiplication", "Exit")
-    print("\nPlease select a calculator function to calculate: ")
+    print("\nPlease select a calculator function to calculate:")
     for index, option in enumerate(OPTIONS, start=1):
         print(f"{index}. {option}")
 
 
 def confirm_exit():
-    """Returns a boolean if the user wants to exit the calculator or not."""
-    should_exit = input("Do you really want to exit calculator? (yes/no): ")
-    return should_exit[0].lower() == "y"
+    """Returns True if the user wants to exit the calculator, False otherwise."""
+    while True:
+        should_exit = input("Do you really want to exit the calculator? (yes/no): ").lower()
+        if should_exit in ["yes", "y"]:
+            return True
+        elif should_exit in ["no", "n"]:
+            return False
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
 
 
 def get_number(prompt):
