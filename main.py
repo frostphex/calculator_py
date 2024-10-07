@@ -10,8 +10,9 @@ def main():
     num2 = ui.get_number("Second number: ")
 
     calculator = Calculator(num1, num2)
+    is_active = True
 
-    while True:
+    while is_active:
         ui.display_options()
 
         choice = ui.ask_choice()
@@ -21,8 +22,8 @@ def main():
         result = calculator.calculate(choice)
         if result == True and type(result) == bool:
             print("Exiting calculator. Have a great day!")
-            break
-        if result is not None:
+            is_active = False
+        elif result is not None:
             print(f"\nResult: {result}")
 
 
