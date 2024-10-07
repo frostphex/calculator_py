@@ -19,14 +19,14 @@ def main():
         if choice is None:
             continue  # Return to menu if the choice is invalid
 
-        if choice == 5:
+        if choice == 6:
             # Confirm before exiting
             if ui.confirm_exit():
                 print("Exiting calculator. Have a great day!")
                 is_active = False
             continue
 
-        if choice == 6:
+        if choice == 5:
             # Enter new numbers
             num1 = ui.get_number("First number: ")
             num2 = ui.get_number("Second number: ")
