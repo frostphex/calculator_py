@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import user_interface as ui
 from calculator import Calculator
 
