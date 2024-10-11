@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # calculator.py - A calculator program to perform basic operations on numbers.
 
 
@@ -33,7 +32,6 @@ class Calculator:
 
     def calculate(self, choice):
         """Calculates the result based on the user's choice."""
-        result = None
 
         # Match user choice to the appropriate operation
         match choice:
@@ -45,5 +43,7 @@ class Calculator:
                 result = self.divide()
             case 4:
                 result = self.multiply()
+            case _:
+                result = None
 
         return result
