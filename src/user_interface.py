@@ -13,16 +13,25 @@ def ask_choice():
 
 def display_options():
     """Display calculator options to the user."""
-    OPTIONS = ("Addition", "Subtraction", "Division", "Multiplication", "New Numbers" ,"Exit")
+    OPTIONS = {
+        1: "Addition",
+        2: "Subtraction",
+        3: "Division",
+        4: "Multiplication",
+        5: "New Numbers",
+        6: "Exit",
+    }
     print("\nPlease select a calculator function to calculate:")
-    for index, option in enumerate(OPTIONS, start=1):
+    for index, option in OPTIONS.items():
         print(f"{index}. {option}")
 
 
 def confirm_exit():
     """Returns True if the user wants to exit the calculator, False otherwise."""
     while True:
-        should_exit = input("Do you really want to exit the calculator? (yes/no): ").lower()
+        should_exit = input(
+            "Do you really want to exit the calculator? (yes/no): "
+        ).lower()
         if should_exit in ["yes", "y"]:
             return True
         elif should_exit in ["no", "n"]:
