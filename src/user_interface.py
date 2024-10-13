@@ -1,9 +1,21 @@
+
+_OPTIONS = {
+    1: "Addition",
+    2: "Subtraction",
+    3: "Division",
+    4: "Multiplication",
+    5: "New Numbers",
+    6: "Exit",
+}
+
+
 def ask_choice():
     """Returns user's choice if valid, otherwise None."""
     try:
         choice = int(input("> "))
-        if choice not in range(1, 7):  # Valid options: 1, 2, 3, 4, 5, 6
-            print("Invalid choice. Please select a valid option (1-6).")
+        if choice not in _OPTIONS:
+            first, *_, last = _OPTIONS.keys()
+            print(f"Invalid choice. Please select a valid option ({first}-{last}).")
             return None
         return choice
     except ValueError:
@@ -13,16 +25,8 @@ def ask_choice():
 
 def display_options():
     """Display calculator options to the user."""
-    OPTIONS = {
-        1: "Addition",
-        2: "Subtraction",
-        3: "Division",
-        4: "Multiplication",
-        5: "New Numbers",
-        6: "Exit",
-    }
     print("\nPlease select a calculator function to calculate:")
-    for index, option in OPTIONS.items():
+    for index, option in _OPTIONS.items():
         print(f"{index}. {option}")
 
 
