@@ -17,13 +17,16 @@ like division by zero.
 ## Installation
 
 1. Clone the repository:
+
    ```bash
       git clone https://github.com/frostphex/calculator_py.git
    ```
-2. Make sure you have Python 3.11 or newer installed. If not, you can 
+
+2. Make sure you have Python 3.11 or newer installed. If not, you can
    download it from [here](https://www.python.org/downloads/).
 
 3. Run the calculator:
+
    ```bash
    cd calculator_py/src
    python3 main.py
@@ -31,7 +34,7 @@ like division by zero.
 
 ## Usage
 
-Upon running the program, you will be prompted to input two numbers. 
+Upon running the program, you will be prompted to input two numbers.
 After that, you can select from the available calculator options:
 
 1. Addition
@@ -82,7 +85,7 @@ Result: 15
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file 
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file
 for details.
 
 ---
