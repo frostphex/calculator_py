@@ -2,35 +2,28 @@ import math
 import random
 
 
-def find_square_root():
+def find_square_root(number):
     """Returns square root of a number."""
-    print("Enter the number:")
-    number = float(input("> "))
     return math.sqrt(number)
 
 
-def find_absolute_value():
+def find_absolute_value(number):
     """Returns absolute value of a number."""
-    print("Enter the number:")
-    number = float(input("> "))
     return abs(number)
 
 
-def find_sine():
+def find_sine(number):
     """Returns sine of a number"""
-    number = int(input("> "))
     return math.sin(number)
 
 
-def find_cosine():
-    """Returns sine of a number"""
-    number = int(input("> "))
+def find_cosine(number):
+    """Returns cosine of a number"""
     return math.cos(number)
 
 
-def find_tangent():
-    """Returns sine of a number"""
-    number = int(input("> "))
+def find_tangent(number):
+    """Returns tan of a number"""
     return math.tangent(number)
 
 
