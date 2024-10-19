@@ -2,7 +2,7 @@ import math
 import random
 
 
-class AdvanceOperations:
+class AdvanceCalculator:
     """A class to perform advance mathematical operations."""
 
     def __init__(self, number):
