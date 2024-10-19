@@ -99,6 +99,33 @@ def trigonometric_menu():
                 print(f"Sine : {adv_calc.find_tangent()}")
             case 4:
                 print(f"Square root : {adv_calc.find_square_root()}")
+            case 5:
+                is_active = False
+
+
+def logarithmic_menu():
+    """Menu for logarithmic operations."""
+    is_active = True
+
+    while is_active:
+        display_options(_LOG_OPTIONS)
+        choice = ask_choice(_LOG_OPTIONS)
+        match choice:
+            case 1:
+                number = get_number("Enter the number: ")
+                base = get_number("Enter the logarithmic base: ")
+                print(f"Logarithm: {AdvanceCalculator.calculate_log(number, base)}")
+            case 2:
+                base = get_number("Enter the base number: ")
+                power = get_number("Enter the power: ")
+                print(
+                    f"Exponentiation: {AdvanceCalculator.calculate_exponentiation(base, power)}"
+                )
+            case 3:
+                number = get_number("Enter a non-negative integer: ")
+                print(f"Factorial: {AdvanceCalculator.factorial(int(number))}")
+            case 4:
+                is_active = False
 
 
 def confirm_exit():
