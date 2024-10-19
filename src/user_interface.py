@@ -1,4 +1,3 @@
-
 _OPTIONS = {
     1: "Addition",
     2: "Subtraction",
@@ -51,9 +50,3 @@ def get_number(prompt):
             return float(input(prompt))
         except ValueError:
             print("Error: Enter a valid number.")
-
-def ask_single_number():
-    """Returns a user input number. """
-    print("Enter the number:")
-    number = float(input("> "))
-    return number
